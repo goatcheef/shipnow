@@ -16,6 +16,15 @@ class UserRepository {
     return await UserModel.findOne({ email }).select(PROYECCION).lean()
   }
 
+  async getByRole(role) {
+    return await UserModel.find({ role, active: true }).select('_id role').lean()
+  }
+
+  async insertMany(users) {
+    const insertados = await UserModel.insertMany(users)
+    return insertados.length
+  }
+
   async create(data) {
     const nuevo = await UserModel.create(data)
     const user = nuevo.toObject()
