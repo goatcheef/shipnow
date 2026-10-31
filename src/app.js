@@ -3,6 +3,7 @@ import config from './config/env.config.js'
 import { connectDB } from './config/db.config.js'
 import productsRouter from './routes/products.router.js'
 import usersRouter from './routes/users.router.js'
+import mocksRouter from './routes/mocks.router.js'
 
 const app = express()
 
@@ -11,6 +12,7 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use('/api/products', productsRouter)
 app.use('/api/users', usersRouter)
+app.use('/api/mocks', mocksRouter)
 
 connectDB()
 

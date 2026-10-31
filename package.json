@@ -11,6 +11,7 @@
   "author": "Santino Valente",
   "license": "ISC",
   "dependencies": {
+    "@faker-js/faker": "^9.9.0",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongoose": "^8.5.1"
